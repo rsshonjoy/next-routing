@@ -1,3 +1,5 @@
+import User from "../components/user";
+
 // ! http://localhost:3000/users
 
 const UserList = ({ users }) => {
@@ -8,8 +10,7 @@ const UserList = ({ users }) => {
         users.map(user => {
           return (
             <div key={user.id}>
-              <h3>{user.name}</h3>
-              <h3>{user.email}</h3>
+              <User user={user} />
             </div>
           )
         })
