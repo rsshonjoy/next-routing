@@ -34,3 +34,20 @@
 ### Pre-rendering Summary
   - Pre-rendering refers to the process of generating HTML with the necessary data for a page in our application
   - Pre-rendering can result in better performance and SEO
+
+## Static Generation
+  - A method of pre-rendering where the HTML pages are generated at build time
+  - The HTML with all the data that makes up the content of the web page are generated in advance when you build your application
+  - Recommended method to pre-render pages whenever possible
+  - Page can be build once, cached by a CDN and served to the client almost instantly
+  - Ex: Blog pages, e-commerce Product pages, documentation and marketing pages
+
+### Static Generation - How?
+  - Next JS, by default will pre-render every page in our app
+  - The HTML for every page will automatically be statically generated when we build our application
+
+  - Prod Server - An optimozed build is created once and you deploy that build. You do not make code changes on the go once it is deployde
+  - Dev Server - We should be able to make changes in our code and we want that code to immediately reflect in the browser
+
+  - For production builds, a page will be pre-rendered once when we run the build command
+  - In development mode, the page is pre-rendered for every request you make
