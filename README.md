@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Pre-rendering & Data Fetching Intro
 
-## Getting Started
+### Type of pre-rendering
+1. Static Generation
+  - without data
+  - with data
+  - incremental Static Generation
+  - dynamic parameters when fetchin data
+2. Server-side Rendering
+  - data Fetching
 
-First, run the development server:
+3. Client-side data Fetching
+  - Combing pre-rendering with client-side data fetching
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### React vs Next JS
+  - By default, Next JS pre-renders every page in the application.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### What does pre-render mean?
+  - Next JS generates HTML for each page in advance instead of having it all done by client-side JavaScript.
+  - Pre-render just means render in advance of sending it to the browser.
+  - Pre-rendering is done by default in a Next JS app.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Why pre-render?
+  1. Pre-rendering improve performance
+    - In a React app, you need to wait for the JavaScript to be executed
+    - Perhaps fetch data from an external API and then render the UI
+    - There is a wait time for the user
+    - With a pre-rendered page, the HTML is already generated and loads faster
+  2. Pre-rendering helps whith SEO
+    - If you building a blog or an e-commerce site, SEO is a  concern
+    - With a React app, if the search engine hits your page, it only sees a div tag with id equal to root
+    - If search engine hits a pre-rendered page though, all the content is present in the source code which will help index that page
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Pre-rendering Summary
+  - Pre-rendering refers to the process of generating HTML with the necessary data for a page in our application
+  - Pre-rendering can result in better performance and SEO
