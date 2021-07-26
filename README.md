@@ -51,3 +51,26 @@
 
   - For production builds, a page will be pre-rendered once when we run the build command
   - In development mode, the page is pre-rendered for every request you make
+
+### getStaticProps
+
+  1.
+    - getStaticProps runs only on the server side
+    - The function will never run client-side
+    - The code you write inside getStaticProps will not even be included in the JS bundle that is sent to the browser
+
+  2.
+    - You can write server-side code directly in getStaticProps
+    - Accessing the file system using the fs module querying database can be done inside getStaticProps
+    - You also do not have about including API keys in getStaticProps as that will not make it to the browser
+
+  3.
+    - getStaticProps is allowed only in a page and cannot be run from a regular component file
+    - It is used only for pre-rendering and not client-side data fetching
+
+  4.
+    - getStaticProps should return an object and object should be contain a props key which is an object
+    - In our example, we returned an object & the object contained a props key which was an object as well.
+
+  5.
+    - getStaticProps wil run at build time.
